@@ -6,15 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".FirstTimeUserActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D1F0DB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="400dp"
-        android:text="START"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="180dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="ENTER IN MY WORLD"
+        android:textColor="#98D5AC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#98D5AC"
+        app:strokeWidth="5px" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/alata"
+        android:text="Welcome to Lyv !"
+        android:textAlignment="center"
+        android:textColor="#7BAC8B"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="152dp"
+        android:layout_height="340dp"
+        app:srcCompat="@drawable/lyv"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
