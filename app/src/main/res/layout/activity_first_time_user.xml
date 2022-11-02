@@ -40,23 +40,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="296dp"
         android:fontFamily="@font/alata"
         android:text="Welcome to Lyv !"
         android:textAlignment="center"
         android:textColor="#7BAC8B"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="152dp"
         android:layout_height="340dp"
-        app:srcCompat="@drawable/lyv"
-        tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="-7dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/lyv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,13 +19,10 @@ public class FirstTimeUserActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMainActivity();
+                Intent intent = new Intent(FirstTimeUserActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    public void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 }
