@@ -15,7 +15,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.AppLyv.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -24,7 +23,6 @@
         <activity
             android:name=".FirstTimeUserActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.AppLyv.NoActionBar" >
 
             <intent-filter>

@@ -9,7 +9,7 @@
 
     <string name="menu_home">Timeline</string>
     <string name="menu_gallery">Allergies Tracker</string>
-    <string name="menu_slideshow">Parameters</string>
+    <string name="menu_slideshow">Your Points</string>
     <string name="title_activity_fist_time_user">FistTimeUserActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
