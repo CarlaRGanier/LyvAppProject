@@ -10,7 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.applyv.R;
 import com.example.applyv.databinding.FragmentGalleryBinding;
+import com.github.mikephil.charting.charts.BarChart;
 
 public class GalleryFragment extends Fragment {
 
@@ -23,6 +25,7 @@ public class GalleryFragment extends Fragment {
 
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
 
         final TextView textView = binding.textGallery;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

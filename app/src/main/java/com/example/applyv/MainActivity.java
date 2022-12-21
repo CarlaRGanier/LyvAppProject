@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import com.example.applyv.databinding.ActivityMainBinding;
 import com.example.applyv.ui.api.ApiHelper;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarDataSet;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -17,10 +19,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.applyv.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    ArrayList barArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
         ApiHelper apiHelper = new ApiHelper();
         apiHelper.getFoodInfo();
+
+        BarChart barChart = findViewById(R.id.barchart);
+        BarDataSet barDataSet = new BarDataSet(barArrayList, "Allegies");
     }
 
     @Override
