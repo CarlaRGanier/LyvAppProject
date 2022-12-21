@@ -22,16 +22,6 @@ public class GraphPage  extends AppCompatActivity {
     ArrayList barArrayList;
     public static ArrayList<Integer> allergensCounterList;
 
-    public void resetArrayData(){
-        allergensCounterList.add(0, 0);
-        allergensCounterList.add(1,0);
-        allergensCounterList.add(2, 0);
-        allergensCounterList.add(3, 0);
-        allergensCounterList.add(4,0);
-        allergensCounterList.add(5,0);
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +29,11 @@ public class GraphPage  extends AppCompatActivity {
 
         //Creating the chart
         BarChart barChart = findViewById(R.id.barchart);
-        resetArrayData();
         getData();
         BarDataSet barDataSet = new BarDataSet(barArrayList, "Allergies");
         BarData barData = new BarData(barDataSet);
         barChart.setData(barData);
-        //BarDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(16f);
         //barChart.setDescription().setEnable(True);
@@ -57,10 +46,6 @@ public class GraphPage  extends AppCompatActivity {
                 //API
                 ApiHelper apiHelper = new ApiHelper();
                 apiHelper.getFoodInfo();
-                allergensCounterList.add(0, 1);
-                allergensCounterList.add(1, 1);
-                allergensCounterList.add(4, 1);
-                getData();
             }
         });
 
@@ -71,11 +56,6 @@ public class GraphPage  extends AppCompatActivity {
                 //API
                 ApiHelper apiHelper = new ApiHelper();
                 apiHelper.getFoodInfo();
-                allergensCounterList.add(0, 2);
-                allergensCounterList.add(2, 1);
-                allergensCounterList.add(3, 1);
-                allergensCounterList.add(5, 1);
-                getData();
             }
         });
 
@@ -86,10 +66,6 @@ public class GraphPage  extends AppCompatActivity {
                 //API
                 ApiHelper apiHelper = new ApiHelper();
                 apiHelper.getFoodInfo();
-                allergensCounterList.add(0, 3);
-                allergensCounterList.add(1, 2);
-                allergensCounterList.add(4, 2);
-                getData();
             }
         });
     }

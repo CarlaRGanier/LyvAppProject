@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.applyv.databinding.ActivityMainBinding;
 import com.example.applyv.ui.api.ApiHelper;
@@ -42,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+        TextView textViewBeforeTimeline = (TextView)findViewById(R.id.textViewBeforeTimeline);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "This should add a Cardview", Snackbar.LENGTH_LONG)
+                textViewBeforeTimeline.setText("SYMPTOM : stomach ache");
+                Snackbar.make(view, "New symptom added", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
