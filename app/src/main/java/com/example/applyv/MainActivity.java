@@ -1,6 +1,7 @@
 package com.example.applyv;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -33,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
-    ArrayList barArrayList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +45,20 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
-
+                Snackbar.make(view, "This should add a Cardview", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
+
+        Button graphButton = (Button) findViewById(R.id.buttonGraph);
+        graphButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, GraphPage.class);
+                startActivity(intent);
+            }
+        });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -66,33 +74,6 @@ public class MainActivity extends AppCompatActivity {
         //API
         ApiHelper apiHelper = new ApiHelper();
         apiHelper.getFoodInfo();
-
-        //Creating the chart
-        BarChart barChart = findViewById(R.id.barchart);
-        getData();
-        BarDataSet barDataSet = new BarDataSet(barArrayList, "Allegies");
-        BarData barData = new BarData(barDataSet);
-        barChart.setData(barData);
-        //BarDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        barDataSet.setValueTextColor(Color.BLACK);
-        barDataSet.setValueTextSize(16f);
-        //barChart.setDescription().setEnable(True);
-    }
-
-    private void getData(){
-        barArrayList = new ArrayList<>();
-        //Egg
-        barArrayList.add(new BarEntry(2f, 0));
-        //Gluten
-        barArrayList.add(new BarEntry(3f, 4));
-        //Nuts
-        barArrayList.add(new BarEntry(4f, 0));
-        //Grain
-        barArrayList.add(new BarEntry(5f, 2));
-        //Seafood
-        barArrayList.add(new BarEntry(5f, 3));
-        //Shellfish
-        barArrayList.add(new BarEntry(5f, 3));
 
     }
 
